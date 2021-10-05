@@ -1,0 +1,27 @@
+ulang = "Y"
+while ulang == "Y" or ulang == "y":
+    print("""
+~~~~~~~~ selamat bergabung di game ~~~~~~~~
+~~~~~~~~~~~ Y / N answer only ~~~~~~~~~~~~~
+      """) 
+    jwb = input("apakah hewan itu tinggal didarat?  ")
+    if jwb == "Y" or jwb == "y":
+            jwb = input("apakah hewan tersebut memakan daging?  ")
+            if jwb == "Y" or jwb == "y":
+                print("""
+        itu pasti pasti harimau""")
+            else :
+                print("""
+        itupasti kambing""")
+    else :
+            jwb = input('apakah hewan itu tinggal di laut? ')
+            if jwb == "Y" or jwb == "y":
+                jwb = input("apakah hewan itu mamalia? ")
+                if jwb == "Y" or jwb == "y":
+                    print("""
+        itu pasti lumba-lumba""")
+                else :
+                    print("""
+        itu pasti ikan kerapu""")
+            else :
+                ulang = input(Y)
