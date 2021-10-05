@@ -1,0 +1,16 @@
+ulang = "z"
+while ulang == "z":
+    print("""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mencari 10 bilangan lebih kecil, 
+dan 10 bilangan ebih besar sama dengan bilangan terseut.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+""")
+    x = int(input("masukan nomor : "))
+    print("10 bilangan yang ebih kecil dari",x ,"=")
+    for y in range(x- 10, x) :
+        print("-",y) 
+    print("10 bilangan yag lebih besar samadengan",x,"=")
+    for q in range(x, (x + 10)):
+        print("-",q)
+input(z)
