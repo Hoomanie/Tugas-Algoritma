@@ -1,0 +1,79 @@
+print("""
+      
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!                                  !
+! KEDAI TEPI JURANG                !
+! MENU :                           !
+! 1. KOPI HITAM = Rp. 10.000       !
+! 2. KOPI SUSU  = Rp. 12.000       !
+! 3. THAI TEA   = Rp. 14.000       !
+! 4. GREAN TEA  = Rp. 14.000       !
+!                                  !
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+""")
+
+X = int(input("Masukan nomor yang ingin anda pesan : "))
+if X == 1:
+    pesanan = "KOPI HITAM"
+    harga1 = 10000
+elif X == 2:
+    pesanan = "KOPI SUSU"
+    harga1 = 12000
+elif X == 3:
+    pesanan = "THAI TEA"
+    harga1 = 14000
+elif X ==4:
+    pesanan = "GREEN TEA"
+    harga1 = 14000
+else :
+    print("tidak memilih")
+print("pesanan :", pesanan)
+print("harga   : Rp. ", harga1)
+ 
+Y = str(input("Apakah anda ingin menambahkan toping? (y/n) : "))
+if Y == 'y':
+    print("""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     
+!                                  !     
+! EKSTRA TOPING!!!!                !
+! MENU :                           !
+! 1. EKSTRA SUSU        = Rp. 3000 !
+! 2. EKSTRA BOBA        = Rp. 5000 !
+! 3. EKSTRA KEJU        = Rp. 4000 !
+! 4. EKSTRA BROWN SUGAR = Rp. 6000 !
+!                                  !
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~""")
+    Z = int(input("Masukan nomor yang ingin anda pesan : "))
+    if Z == 1:
+        toping = "EKSTRA SUSU"
+        harga2 = 3000
+    elif Z == 2:
+        toping = "EKSTRA BOBA"
+        harga2 = 5000
+    elif Z == 3:
+        toping = "EKSTRA KEJU"
+        harga2 = 4000
+    elif Z == 4:
+        toping = "EKSTRA BROWN SUGAR"
+        passharga2 = 6000
+    else :
+        toping = "NONE"
+        harga2 = 0
+    jumlah = harga1 + harga2
+    print("Pesanan     : ", pesanan, toping)
+    print("Total harga : Rp. ", jumlah)
+    print("""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~pesanan sedang di proses~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~""")
+
+elif Y == "n":
+    print("Tidak ada tambahan toping") 
+    print("pesanan : ", pesanan) 
+    print("harga   : Rp. ", harga1)
+    print("""
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~pesanan sedang di proses~~~~~~ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~""")
