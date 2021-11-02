@@ -1,0 +1,9 @@
+def polinominal(z):
+    for x in range(z):
+        print(f'x^{z} + ', end='')
+        z-= 1
+        if z == 1:
+            print ('x + 1')
+            break
+n = int(input('masukan angka : '))
+polinominal(n)
