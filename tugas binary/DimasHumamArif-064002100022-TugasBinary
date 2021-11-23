@@ -1,0 +1,100 @@
+nim = []
+nama = []
+nomor = []
+data = []
+qwe = 0
+baris = []
+x = open('mahasiswa_gasal_2021.csv','r')
+for line in x:
+    qwe += 1
+    baris = line.split(',')
+    if qwe == 35:
+        break
+    else:
+        if qwe == 1:
+            nomor.append(baris[0])
+            nim.append(baris[1])
+            nama.append(baris[2])
+        else:
+            nomor.append(int(baris[0]))
+            nim.append(str(baris[1]))
+            nama.append(baris[2])
+nama = [line.strip() for line in nama]
+x.close()
+
+# Create data part 2 :))
+a = open('mahasiswa_gasal_2021.csv','r')
+data2 = []
+x = 0
+for line in a:
+    data2.append(line)
+    x+=1
+    if x >= 34:
+        break
+    else:
+        pass       
+a.close()
+
+def vnama(qwe,y):
+    m = (len(qwe)-1) //2
+    if qwe[m] == y:
+        return m
+    l = 0
+    while True:
+        if qwe[l] == y:
+            return l
+        elif l == m:
+            break
+        else:
+            l += 1
+    l = (len(y)-1)
+    while True:
+        try:
+            if qwe[l] == y:
+                return l
+            elif l == m:
+                break
+            else:
+                l -= 1
+        except IndexError:
+            return -1
+    return -1
+
+def vnomor(arr, l, r, qwe):
+    if r >= l: 
+        mid = l + (r - l) // 2
+        if mid == qwe:
+            return mid
+        elif mid > qwe:
+            return vnomor(arr, l, mid-1, qwe)
+        else:
+            return vnomor(arr, mid + 1, r, qwe) 
+    else:
+        return -1
+u = True 
+while u == True:
+    opsi = str(input("Cari berdasarkan:\na).Nama\nb).NIM\nc).Nomor Absen\nd).Untuk stop program\n>> "))
+    if opsi == 'a' or opsi == 'A':
+        srch = str(input('Pencarian Nama: '))
+        hsl = vnama(nama,str.upper(srch))
+        if hsl == -1:
+            print('Tidak terdaftar')
+        else:
+            print(data2[hsl])
+    elif opsi == 'b' or opsi == 'B':
+        srch = str(input('Pencarian NIM: '))
+        hsl = vnama(nim,srch)
+        if hsl == -1:
+            print('Tidak terdaftar')
+        else:
+            print(data2[hsl])
+    elif opsi == 'c' or opsi == 'C':
+        srch = str(input('Pencarian Nomor Absen: '))
+        hsl = vnomor(nomor,0,len(nomor)-1,int(srch))
+        if hsl == -1:
+            print('Tidak terdaftar')
+        else:
+            print(data2[hsl])
+    else:
+        u = False
+        print('~terimakasih~')
